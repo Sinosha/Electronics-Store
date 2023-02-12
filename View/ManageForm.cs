@@ -12,9 +12,10 @@ namespace Electronics_Store
 {
     public partial class ManageForm : Form
     {
-        public ManageForm()
+        public ManageForm(Classes.User user)
         {
             InitializeComponent();
+            label2.Text = user.FirstName;
         }
     }
 }

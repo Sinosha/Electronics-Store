@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ElectronicsStore" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Models" Relationship="Self.FK__Model__Category___3A81B327" FromRole="Category" ToRole="Model" />
+  </EntityType>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Manufacturer_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Models" Relationship="Self.FK__Model__Manufactu__3B75D760" FromRole="Manufacturer" ToRole="Model" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category_name_FK" Type="Int32" />
+    <Property Name="Manufacturer_name_FK" Type="Int32" />
+    <Property Name="Model1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Model__Category___3A81B327" FromRole="Model" ToRole="Category" />
+    <NavigationProperty Name="Manufacturer" Relationship="Self.FK__Model__Manufactu__3B75D760" FromRole="Model" ToRole="Manufacturer" />
+    <NavigationProperty Name="Model_Specification" Relationship="Self.FK__Model_Spe__Model__3E52440B" FromRole="Model" ToRole="Model_Specification" />
+  </EntityType>
+  <EntityType Name="Model_Specification">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Model_FK" Type="Int32" />
+    <Property Name="Model_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Specification" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Date_of_manufacture" Type="DateTime" Precision="0" />
+    <Property Name="Available_in_stock" Type="Int32" />
+    <Property Name="Weight" Type="Double" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Model" Relationship="Self.FK__Model_Spe__Model__3E52440B" FromRole="Model_Specification" ToRole="Model" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User_Personal_Data" Relationship="Self.FK__User_Pers__User___4316F928" FromRole="User" ToRole="User_Personal_Data" />
+    <Property Name="Salt" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User_Personal_Data">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_FK" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Current_city" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="E_mail" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Self.FK__User_Pers__User___4316F928" FromRole="User_Personal_Data" ToRole="User" />
+    <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK__Model__Category___3A81B327">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="Category_name_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Model__Manufactu__3B75D760">
+    <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="0..1" />
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="Manufacturer_name_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Model_Spe__Model__3E52440B">
+    <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
+    <End Role="Model_Specification" Type="Self.Model_Specification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Model_Specification">
+        <PropertyRef Name="Model_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Pers__User___4316F928">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="User_Personal_Data" Type="Self.User_Personal_Data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User_Personal_Data">
+        <PropertyRef Name="User_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ElectronicsStoreContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Manufacturers" EntityType="Self.Manufacturer" />
+    <EntitySet Name="Models" EntityType="Self.Model" />
+    <EntitySet Name="Model_Specification" EntityType="Self.Model_Specification" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="User_Personal_Data" EntityType="Self.User_Personal_Data" />
+    <AssociationSet Name="FK__Model__Category___3A81B327" Association="Self.FK__Model__Category___3A81B327">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Model" EntitySet="Models" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Model__Manufactu__3B75D760" Association="Self.FK__Model__Manufactu__3B75D760">
+      <End Role="Manufacturer" EntitySet="Manufacturers" />
+      <End Role="Model" EntitySet="Models" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Model_Spe__Model__3E52440B" Association="Self.FK__Model_Spe__Model__3E52440B">
+      <End Role="Model" EntitySet="Models" />
+      <End Role="Model_Specification" EntitySet="Model_Specification" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Pers__User___4316F928" Association="Self.FK__User_Pers__User___4316F928">
+      <End Role="User" EntitySet="Users" />
+      <End Role="User_Personal_Data" EntitySet="User_Personal_Data" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

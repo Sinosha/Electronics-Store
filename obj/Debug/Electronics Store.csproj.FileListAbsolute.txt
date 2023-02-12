@@ -1,0 +1,21 @@
+E:\repos\Electronics Store\obj\Debug\Electronics Store.csproj.AssemblyReference.cache
+E:\repos\Electronics Store\obj\Debug\Electronics Store.csproj.SuggestedBindingRedirects.cache
+E:\repos\Electronics Store\obj\Debug\Electronics_Store.AuthorizationForm.resources
+E:\repos\Electronics Store\obj\Debug\Electronics_Store.ManageForm.resources
+E:\repos\Electronics Store\obj\Debug\Electronics_Store.Properties.Resources.resources
+E:\repos\Electronics Store\obj\Debug\Electronics Store.csproj.GenerateResource.cache
+E:\repos\Electronics Store\obj\Debug\Electronics Store.csproj.CoreCompileInputs.cache
+E:\repos\Electronics Store\bin\Debug\Electronics Store.exe.config
+E:\repos\Electronics Store\bin\Debug\Electronics Store.exe
+E:\repos\Electronics Store\bin\Debug\Electronics Store.pdb
+E:\repos\Electronics Store\bin\Debug\EntityFramework.dll
+E:\repos\Electronics Store\bin\Debug\EntityFramework.SqlServer.dll
+E:\repos\Electronics Store\bin\Debug\Pbkdf2.dll
+E:\repos\Electronics Store\bin\Debug\EntityFramework.xml
+E:\repos\Electronics Store\bin\Debug\EntityFramework.SqlServer.xml
+E:\repos\Electronics Store\bin\Debug\ru\EntityFramework.resources.dll
+E:\repos\Electronics Store\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+E:\repos\Electronics Store\obj\Debug\Electronics Store.csproj.CopyComplete
+E:\repos\Electronics Store\obj\Debug\Electronics Store.exe
+E:\repos\Electronics Store\obj\Debug\Electronics Store.pdb
+E:\repos\Electronics Store\obj\Debug\Electronics_Store.View.RegistrationForm.resources

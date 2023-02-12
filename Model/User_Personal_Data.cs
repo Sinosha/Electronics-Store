@@ -21,6 +21,7 @@ namespace Electronics_Store.Model
         public string PhoneNumber { get; set; }
         public string Current_city { get; set; }
         public string E_mail { get; set; }
+        public string Role { get; set; }
     
         public virtual User User { get; set; }
     }

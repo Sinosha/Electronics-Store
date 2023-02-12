@@ -6,47 +6,16 @@ using System.Threading.Tasks;
 
 namespace Electronics_Store.Classes
 {
-    public abstract class User
+    public class User
     {
-        string Name;
-        bool IsAdmin;
-    }
-
-    public class Client : User
-    {
-        public string Name { get; set; }
-        public bool IsAdmin { get; set; }
-        
-        Client (string name)
-        {
-            Name = name;
-            IsAdmin = false;
-        }
-
-    }
-    public class Manager : User
-    {
-        public string Name { get; set; }
-        public bool IsAdmin { get; set; }
-
-        Manager(string name)
-        {
-            Name = name;
-            IsAdmin = false;
-        }
-
-    }
-
-    public class Admin : User
-    {
-        public string Name { get; set; }
-        public bool IsAdmin { get; set; }
-
-        Admin(string name)
-        {
-            Name = name;
-            IsAdmin = false;
-        }
-
+        public int ID { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Current_city { get; set; }
+        public string E_mail { get; set; }
+        public string Role { get; set; }
     }
 }

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище ElectronicsStore" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Manufacturer_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category_name_FK" Type="int" />
+    <Property Name="Manufacturer_name_FK" Type="int" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Model_Specification">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Model_FK" Type="int" />
+    <Property Name="Model_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Specification" Type="nvarchar" MaxLength="250" />
+    <Property Name="Date_of_manufacture" Type="date" />
+    <Property Name="Available_in_stock" Type="int" />
+    <Property Name="Weight" Type="float" />
+    <Property Name="Price" Type="money" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="30" />
+    <Property Name="Password" Type="nvarchar" MaxLength="30" />
+    <Property Name="Salt" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="User_Personal_Data">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_FK" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="20" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="20" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="12" />
+    <Property Name="Current_city" Type="nvarchar" MaxLength="30" />
+    <Property Name="E_mail" Type="nvarchar" MaxLength="30" />
+    <Property Name="Role" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK__Model__Category___3A81B327">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="Category_name_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Model__Manufactu__3B75D760">
+    <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="0..1" />
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="Manufacturer_name_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Model_Spe__Model__3E52440B">
+    <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
+    <End Role="Model_Specification" Type="Self.Model_Specification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Model_Specification">
+        <PropertyRef Name="Model_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Pers__User___4316F928">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="User_Personal_Data" Type="Self.User_Personal_Data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User_Personal_Data">
+        <PropertyRef Name="User_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ElectronicsStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Model" EntityType="Self.Model" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Model_Specification" EntityType="Self.Model_Specification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Personal_Data" EntityType="Self.User_Personal_Data" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Model__Category___3A81B327" Association="Self.FK__Model__Category___3A81B327">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Model" EntitySet="Model" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Model__Manufactu__3B75D760" Association="Self.FK__Model__Manufactu__3B75D760">
+      <End Role="Manufacturer" EntitySet="Manufacturer" />
+      <End Role="Model" EntitySet="Model" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Model_Spe__Model__3E52440B" Association="Self.FK__Model_Spe__Model__3E52440B">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="Model_Specification" EntitySet="Model_Specification" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Pers__User___4316F928" Association="Self.FK__User_Pers__User___4316F928">
+      <End Role="User" EntitySet="User" />
+      <End Role="User_Personal_Data" EntitySet="User_Personal_Data" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
