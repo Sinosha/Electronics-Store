@@ -1,3 +1,9 @@
+-12.02.2023
+	- Реализована аутентификация, частично реализована функция входа в учетную запись.
+	- Реализовано окно регистрации пользователя.
+	- Отредактирована структура базы данных (добавлена роль и salt для пользователей).
+	- Реализована функция хеширования паролей.
+
 - 07.02.2023
 	- Создана структура базы данных.
 	- Частично реализованы диалоговые окна.
@@ -6,6 +12,11 @@
 
 Translated using Goggle Translate.
 
+-12.02.2023
+	- Implemented authentication, partially implemented the function of logging into the account.
+	- Implemented user registration window.
+	- Edited database structure (added role and salt for users).
+	- Implemented password hashing function.
 
 - 07.02.2023
 	- Created a database structure.
