@@ -9,6 +9,7 @@ namespace Electronics_Store.Services
     public interface IEncrypt
     {
         string HashPassword(string password, string salt);
+
     }
 
     
