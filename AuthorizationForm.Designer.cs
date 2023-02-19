@@ -34,10 +34,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.LoginTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LoginButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.RegistyButton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -94,15 +95,15 @@
             this.PasswordTextBox.Size = new System.Drawing.Size(405, 20);
             this.PasswordTextBox.TabIndex = 5;
             // 
-            // button1
+            // LoginButton
             // 
-            this.button1.Location = new System.Drawing.Point(206, 220);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 57);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Войти";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.LoginButton.Location = new System.Drawing.Point(206, 220);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(167, 57);
+            this.LoginButton.TabIndex = 6;
+            this.LoginButton.Text = "Войти";
+            this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // button2
             // 
@@ -124,25 +125,38 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Нет аккаунта? Войдите как гость, либо зарегистрируйтесь";
             // 
-            // button3
+            // RegistyButton
             // 
-            this.button3.Location = new System.Drawing.Point(99, 374);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(151, 57);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Регистрация";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.RegistyButton.Location = new System.Drawing.Point(99, 374);
+            this.RegistyButton.Name = "RegistyButton";
+            this.RegistyButton.Size = new System.Drawing.Size(151, 57);
+            this.RegistyButton.TabIndex = 9;
+            this.RegistyButton.Text = "Регистрация";
+            this.RegistyButton.UseVisualStyleBackColor = true;
+            this.RegistyButton.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(114, 295);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(339, 17);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Неверный логин или пароль, попробуйте ещё раз\r\n";
+            this.label9.Visible = false;
             // 
             // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 458);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.RegistyButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.LoginTextBox);
             this.Controls.Add(this.label4);
@@ -164,9 +178,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox LoginTextBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button RegistyButton;
+        private System.Windows.Forms.Label label9;
     }
 }

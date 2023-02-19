@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Electronics_Store.Classes
 {
-    public class User
+    public class UserLocal
     {
         public int ID { get; set; }
         public string Login { get; set; }

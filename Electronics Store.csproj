@@ -64,8 +64,9 @@
     <Compile Include="AuthorizationForm.Designer.cs">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\UserLocal.cs" />
     <Compile Include="Services\Auth.cs" />
+    <Compile Include="Services\Encrypt.cs" />
     <Compile Include="Services\IAuth.cs" />
     <Compile Include="Services\IEncrypt.cs" />
     <Compile Include="View\ManageForm.cs">

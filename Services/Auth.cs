@@ -12,47 +12,24 @@ namespace Electronics_Store.Services
 {
     public class Auth : IAuth
     {
-        public static Auth Instance { get => AuthCreate.Instance; }
-        private readonly IEncrypt _encrypt = new Encrypt();
         ElectronicsStoreContext _context = new ElectronicsStoreContext();
-
-        public async Task<User> GetUser(string login)
+        public User GetUser(string login)
         {
-            return await _context.Users.FirstOrDefaultAsync(u => u.Login == login) ?? new User();
-        }
-        public async Task<User> AddUser(User user)
-        {
-            user.Salt = Guid.NewGuid().ToString();
-            user.Password = _encrypt.HashPassword(user.Password, user.Salt);
-
-            _context.Users.Add(user);     //Добавить в DbContext public DbSet<User> Users {get;set;}
-            await _context.SaveChangesAsync();
-            return _context.Users.Last();
-        }
-
-        public async Task<User> Login(string login, string password)
-        {
-            var user = await GetUser(login);
-            if (user.Password == _encrypt.HashPassword(password, user.Salt))
-            {
-                MessageBox.Show("Succ");
-            }
-            else
-            {
-                MessageBox.Show("Unsucc");
-            }
+           var user = _context.Users.Where(u => u.Login == login).FirstOrDefault();
             return user;
         }
 
-        private Auth()
+        public bool Login(User user)
         {
-            _context = new ElectronicsStoreContext();
-        }
-
-        private class AuthCreate
-        {
-            static AuthCreate() { }
-            internal static readonly Auth Instance = new Auth();
+            var temp = GetUser(user.Login);
+            if(user.Login == temp.Login && user.Password == temp.Password)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

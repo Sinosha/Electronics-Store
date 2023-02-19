@@ -1,4 +1,5 @@
 ﻿using Electronics_Store.Model;
+using Electronics_Store.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace Electronics_Store.View
     public partial class RegistrationForm : Form
     {
         ElectronicsStoreContext _context;
+        Auth auth = new Auth();
         public RegistrationForm()
         {
             InitializeComponent();
@@ -36,7 +38,7 @@ namespace Electronics_Store.View
             {
                 User user = new User() { Login = LoginTextBox.Text, Password = PasswordTextBox.Text };
                 User_Personal_Data data = new User_Personal_Data()
-                { FirstName = FirstNameTextBox.Text, LastName = LastNameTextBox.Text, PhoneNumber = PhoneTextBox.Text, Current_city = CityTextBox.Text, E_mail = EMailTextBox.Text };
+                { User_FK = user.ID, FirstName = FirstNameTextBox.Text, LastName = LastNameTextBox.Text, PhoneNumber = PhoneTextBox.Text, Current_city = CityTextBox.Text, E_mail = EMailTextBox.Text, Role = "Client" };
                 _context.Users.Add(user);
                 _context.User_Personal_Data.Add(data);
                 _context.SaveChanges();
