@@ -1,3 +1,9 @@
+-24.02.2023
+	- Полностью реализовано окно авторизации/регистрации.
+	- Добавлена функция хеширования пароля.
+	- Начата разработка главной формы, в которой будут отображаться товары из базы данных, с возможностью сортировки
+		по различным критериям.
+
 -19.02.2023
 	- Небольшие изменения в программе. Было решено времено отказаться от синглтона
 	поскольку его реализация вызывает у меня некоторые трудности.
@@ -16,6 +22,12 @@
 ----------------------------------------------------------------------------------------------------------------------
 
 Translated using Goggle Translate.
+
+-24.02.2023
+	- The authorization/registration window is fully implemented.
+	- Added the function of drifting password.
+	- The development of the main form has begun in which goods from the database will be displayed with the possibility of sorting
+		according to various criteria.
 
 -19.02.2023
 	- Small changes in the program. It was decided to temporarily abandon the singleton
