@@ -14,7 +14,7 @@ namespace Electronics_Store.Service
     public interface IAuth
     {
         User GetUser(string login);
-        bool Login(User user);
+        bool Login(User user, string password);
     }
 
     

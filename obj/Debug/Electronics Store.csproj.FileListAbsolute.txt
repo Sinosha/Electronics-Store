@@ -1,7 +1,6 @@
 E:\repos\Electronics Store\obj\Debug\Electronics Store.csproj.AssemblyReference.cache
 E:\repos\Electronics Store\obj\Debug\Electronics Store.csproj.SuggestedBindingRedirects.cache
 E:\repos\Electronics Store\obj\Debug\Electronics_Store.AuthorizationForm.resources
-E:\repos\Electronics Store\obj\Debug\Electronics_Store.ManageForm.resources
 E:\repos\Electronics Store\obj\Debug\Electronics_Store.Properties.Resources.resources
 E:\repos\Electronics Store\obj\Debug\Electronics Store.csproj.GenerateResource.cache
 E:\repos\Electronics Store\obj\Debug\Electronics Store.csproj.CoreCompileInputs.cache
@@ -19,3 +18,4 @@ E:\repos\Electronics Store\obj\Debug\Electronics Store.csproj.CopyComplete
 E:\repos\Electronics Store\obj\Debug\Electronics Store.exe
 E:\repos\Electronics Store\obj\Debug\Electronics Store.pdb
 E:\repos\Electronics Store\obj\Debug\Electronics_Store.View.RegistrationForm.resources
+E:\repos\Electronics Store\obj\Debug\Electronics_Store.MainForm.resources

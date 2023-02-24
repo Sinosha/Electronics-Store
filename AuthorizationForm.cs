@@ -35,12 +35,12 @@ namespace Electronics_Store
             {
                 label9.Visible = true;
             }
-            else if (Auth.Login(user))
+            else if (Auth.Login(user,PasswordTextBox.Text))
             {
                 int index = user.ID;
                 _data.FirstName = _context.User_Personal_Data.FirstOrDefault(i => i.User_FK == index).FirstName.ToString();
                 _data.Role = _context.User_Personal_Data.FirstOrDefault(i => i.User_FK == index).Role;
-                ManageForm manageForm = new ManageForm(_data);
+                MainForm manageForm = new MainForm(_data);
                 manageForm.ShowDialog();
             }
         }
@@ -50,7 +50,7 @@ namespace Electronics_Store
             this.Hide();
             _data.FirstName = "Гость";
             _data.Role = "Guest";
-            ManageForm manageForm = new ManageForm(_data);
+            MainForm manageForm = new MainForm(_data);
             manageForm.ShowDialog();
         }
 

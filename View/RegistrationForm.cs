@@ -15,6 +15,7 @@ namespace Electronics_Store.View
     public partial class RegistrationForm : Form
     {
         ElectronicsStoreContext _context;
+        Encrypt encrypt = new Encrypt();
         Auth auth = new Auth();
         public RegistrationForm()
         {
@@ -36,9 +37,12 @@ namespace Electronics_Store.View
             }
             else
             {
-                User user = new User() { Login = LoginTextBox.Text, Password = PasswordTextBox.Text };
+                string tempPassword = PasswordTextBox.Text;
+                string tempSalt = Guid.NewGuid().ToString();
+                tempPassword = encrypt.HashPassword(tempPassword, tempSalt);
+                User user = new User() { Login = LoginTextBox.Text, Password = tempPassword, Salt = tempSalt };
                 User_Personal_Data data = new User_Personal_Data()
-                { User_FK = user.ID, FirstName = FirstNameTextBox.Text, LastName = LastNameTextBox.Text, PhoneNumber = PhoneTextBox.Text, Current_city = CityTextBox.Text, E_mail = EMailTextBox.Text, Role = "Client" };
+                { User_FK = user.ID, FirstName = FirstNameTextBox.Text, LastName = LastNameTextBox.Text, PhoneNumber = maskedTextBox1.Text, Current_city = CityTextBox.Text, E_mail = EMailTextBox.Text, Role = "Client" };
                 _context.Users.Add(user);
                 _context.User_Personal_Data.Add(data);
                 _context.SaveChanges();

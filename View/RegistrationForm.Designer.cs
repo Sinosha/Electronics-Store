@@ -36,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.CityTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -110,13 +110,6 @@
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Фамилия:";
-            // 
-            // PhoneTextBox
-            // 
-            this.PhoneTextBox.Location = new System.Drawing.Point(114, 258);
-            this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.Size = new System.Drawing.Size(283, 20);
-            this.PhoneTextBox.TabIndex = 9;
             // 
             // label5
             // 
@@ -189,11 +182,21 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "Заполните поле";
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.maskedTextBox1.Location = new System.Drawing.Point(117, 258);
+            this.maskedTextBox1.Mask = "0-(000)-000-00-00";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(280, 20);
+            this.maskedTextBox1.TabIndex = 17;
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 532);
+            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
@@ -201,7 +204,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.CityTextBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.PhoneTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.LastNameTextBox);
             this.Controls.Add(this.label4);
@@ -228,7 +230,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox LastNameTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox PhoneTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox CityTextBox;
         private System.Windows.Forms.Label label6;
@@ -237,5 +238,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
