@@ -1,3 +1,8 @@
+-19.02.2023
+	- Небольшие изменения в программе. Было решено времено отказаться от синглтона
+	поскольку его реализация вызывает у меня некоторые трудности.
+	- Правки в окне авторизации и регистрации.
+
 -12.02.2023
 	- Реализована аутентификация, частично реализована функция входа в учетную запись.
 	- Реализовано окно регистрации пользователя.
@@ -11,6 +16,11 @@
 ----------------------------------------------------------------------------------------------------------------------
 
 Translated using Goggle Translate.
+
+-19.02.2023
+	- Small changes in the program. It was decided to temporarily abandon the singleton
+	because its implementation causes me some difficulties.
+	- Edits in the authorization and registration window.
 
 -12.02.2023
 	- Implemented authentication, partially implemented the function of logging into the account.
