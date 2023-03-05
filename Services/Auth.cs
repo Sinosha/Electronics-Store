@@ -12,7 +12,7 @@ namespace Electronics_Store.Services
 {
     public class Auth : IAuth
     {
-        ElectronicsStoreContext _context = new ElectronicsStoreContext();
+        ElectronicsStore _context = new ElectronicsStore();
         Encrypt encrypt = new Encrypt();
         public User GetUser(string login)
         {

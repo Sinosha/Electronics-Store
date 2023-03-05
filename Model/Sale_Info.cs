@@ -12,23 +12,17 @@ namespace Electronics_Store.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Manufacturer
+    public partial class Sale_Info
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Manufacturer()
-        {
-            this.Models = new HashSet<Model>();
-        }
-    
         public int ID { get; set; }
-        public string Manufacturer_name { get; set; }
+        public Nullable<System.DateTime> SaleDate { get; set; }
+        public Nullable<int> Model_Spec_FK { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Model> Models { get; set; }
+        public virtual Model_Specification Model_Specification { get; set; }
 
         public override string ToString()
         {
-            return Manufacturer_name;
+            return SaleDate.Value.ToString();
         }
     }
 }

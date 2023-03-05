@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище ElectronicsStoreContainer" CdmEntityContainer="ElectronicsStoreContext">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Electronics_storeModelContainer" CdmEntityContainer="ElectronicsStore">
     <EntitySetMapping Name="Categories">
-      <EntityTypeMapping TypeName="ElectronicsStore.Category">
+      <EntityTypeMapping TypeName="Electronics_storeModel.Category">
         <MappingFragment StoreEntitySet="Category">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Category_name" ColumnName="Category_name" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Manufacturers">
-      <EntityTypeMapping TypeName="ElectronicsStore.Manufacturer">
+      <EntityTypeMapping TypeName="Electronics_storeModel.Manufacturer">
         <MappingFragment StoreEntitySet="Manufacturer">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Manufacturer_name" ColumnName="Manufacturer_name" />
@@ -18,20 +18,22 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Models">
-      <EntityTypeMapping TypeName="ElectronicsStore.Model">
+      <EntityTypeMapping TypeName="Electronics_storeModel.Model">
         <MappingFragment StoreEntitySet="Model">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Category_name_FK" ColumnName="Category_name_FK" />
           <ScalarProperty Name="Manufacturer_name_FK" ColumnName="Manufacturer_name_FK" />
           <ScalarProperty Name="Model1" ColumnName="Model" />
+          <ScalarProperty Name="Model_specification_FK" ColumnName="Model_specification_FK" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Model_Specification">
-      <EntityTypeMapping TypeName="ElectronicsStore.Model_Specification">
+      <EntityTypeMapping TypeName="Electronics_storeModel.Model_Specification">
         <MappingFragment StoreEntitySet="Model_Specification">
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="AmountOfDefective" ColumnName="AmountOfDefective" />
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Model_FK" ColumnName="Model_FK" />
           <ScalarProperty Name="Model_name" ColumnName="Model_name" />
           <ScalarProperty Name="Specification" ColumnName="Specification" />
           <ScalarProperty Name="Date_of_manufacture" ColumnName="Date_of_manufacture" />
@@ -42,19 +44,18 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="ElectronicsStore.User">
+      <EntityTypeMapping TypeName="Electronics_storeModel.User">
         <MappingFragment StoreEntitySet="User">
-          <ScalarProperty Name="Salt" ColumnName="Salt" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Login" ColumnName="Login" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="User_Personal_Data">
-      <EntityTypeMapping TypeName="ElectronicsStore.User_Personal_Data">
+      <EntityTypeMapping TypeName="Electronics_storeModel.User_Personal_Data">
         <MappingFragment StoreEntitySet="User_Personal_Data">
-          <ScalarProperty Name="Role" ColumnName="Role" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="User_FK" ColumnName="User_FK" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -62,6 +63,16 @@
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
           <ScalarProperty Name="Current_city" ColumnName="Current_city" />
           <ScalarProperty Name="E_mail" ColumnName="E_mail" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sale_Info">
+      <EntityTypeMapping TypeName="Electronics_storeModel.Sale_Info">
+        <MappingFragment StoreEntitySet="Sale_Info">
+          <ScalarProperty Name="Model_Spec_FK" ColumnName="Model_Spec_FK" />
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

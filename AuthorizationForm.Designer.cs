@@ -44,20 +44,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(35, 19);
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(10, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(481, 26);
+            this.label1.Size = new System.Drawing.Size(512, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Приветствуем вас в нашем магазине электроники!";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(113, 55);
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(95, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(290, 22);
+            this.label2.Size = new System.Drawing.Size(328, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "     Пожалуйста, авторизируйтесь\r\n";
             // 
@@ -119,10 +119,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Monotype Corsiva", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(11, 325);
+            this.label5.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(43, 336);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(505, 22);
+            this.label5.Size = new System.Drawing.Size(479, 19);
             this.label5.TabIndex = 8;
             this.label5.Text = "Нет аккаунта? Войдите как гость, либо зарегистрируйтесь";
             // 

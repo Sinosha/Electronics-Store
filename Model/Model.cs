@@ -14,20 +14,14 @@ namespace Electronics_Store.Model
     
     public partial class Model
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Model()
-        {
-            this.Model_Specification = new HashSet<Model_Specification>();
-        }
-    
         public int ID { get; set; }
         public Nullable<int> Category_name_FK { get; set; }
         public Nullable<int> Manufacturer_name_FK { get; set; }
         public string Model1 { get; set; }
+        public Nullable<int> Model_specification_FK { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual Manufacturer Manufacturer { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Model_Specification> Model_Specification { get; set; }
+        public virtual Model_Specification Model_Specification { get; set; }
     }
 }

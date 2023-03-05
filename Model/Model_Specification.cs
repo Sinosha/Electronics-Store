@@ -11,18 +11,37 @@ namespace Electronics_Store.Model
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Model_Specification
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Model_Specification()
+        {
+            this.Models = new HashSet<Model>();
+            this.Sale_Info = new HashSet<Sale_Info>();
+        }
+    
         public int ID { get; set; }
-        public Nullable<int> Model_FK { get; set; }
         public string Model_name { get; set; }
         public string Specification { get; set; }
         public Nullable<System.DateTime> Date_of_manufacture { get; set; }
         public Nullable<int> Available_in_stock { get; set; }
         public Nullable<double> Weight { get; set; }
         public Nullable<decimal> Price { get; set; }
+        public Nullable<int> AmountOfDefective { get; set; }
+        public string Country { get; set; }
     
-        public virtual Model Model { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Model> Models { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sale_Info> Sale_Info { get; set; }
+
+        public override string ToString()
+        {
+            string LastSale = Sale_Info.First().ToString();
+            return $"Дата производства: {Date_of_manufacture} Вес: {Weight} Цена: {Price}  Кол-во брака: {AmountOfDefective} Страна:  {Country} " +
+                    $"Дата продажи: {LastSale}";
+        }
     }
 }

@@ -4,17 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="36497df371d14e139e480e7124600e81" Name="Diagram1">
-        <EntityTypeShape EntityType="ElectronicsStore.Category" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ElectronicsStore.Manufacturer" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ElectronicsStore.Model" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ElectronicsStore.Model_Specification" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ElectronicsStore.User" Width="1.5" PointX="2.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ElectronicsStore.User_Personal_Data" Width="1.5" PointX="5" PointY="5" IsExpanded="true" />
-        <AssociationConnector Association="ElectronicsStore.FK__Model__Category___3A81B327" ManuallyRouted="false" />
-        <AssociationConnector Association="ElectronicsStore.FK__Model__Manufactu__3B75D760" ManuallyRouted="false" />
-        <AssociationConnector Association="ElectronicsStore.FK__Model_Spe__Model__3E52440B" ManuallyRouted="false" />
-        <AssociationConnector Association="ElectronicsStore.FK__User_Pers__User___4316F928" ManuallyRouted="false" />
+      <Diagram DiagramId="9d54287479a54466a5b57c64e5c915e3" Name="Diagram1">
+        <EntityTypeShape EntityType="Electronics_storeModel.Category" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Electronics_storeModel.Manufacturer" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Electronics_storeModel.Model" Width="1.5" PointX="3.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Electronics_storeModel.Model_Specification" Width="1.5" PointX="5.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Electronics_storeModel.User" Width="1.5" PointX="2.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Electronics_storeModel.User_Personal_Data" Width="1.5" PointX="4.625" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="Electronics_storeModel.FK__Model__Category___3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="Electronics_storeModel.FK__Model__Manufactu__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="Electronics_storeModel.FK__Model__Model_spe__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="Electronics_storeModel.FK__User_Pers__User___4316F928" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Electronics_storeModel.Sale_Info" Width="1.5" PointX="7.75" PointY="2" />
+        <AssociationConnector Association="Electronics_storeModel.FK__Sale_Info__Model__5CD6CB2B" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

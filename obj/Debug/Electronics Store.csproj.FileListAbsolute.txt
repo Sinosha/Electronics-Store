@@ -19,3 +19,7 @@ E:\repos\Electronics Store\obj\Debug\Electronics Store.exe
 E:\repos\Electronics Store\obj\Debug\Electronics Store.pdb
 E:\repos\Electronics Store\obj\Debug\Electronics_Store.View.RegistrationForm.resources
 E:\repos\Electronics Store\obj\Debug\Electronics_Store.MainForm.resources
+E:\repos\Electronics Store\obj\Debug\Electronics_Store.View.ProductsView.AddOrderForm.resources
+E:\repos\Electronics Store\obj\Debug\Electronics_Store.View.ProductsView.AddProductForm.resources
+E:\repos\Electronics Store\obj\Debug\Electronics_Store.View.ProductsView.ProductsView.resources
+E:\repos\Electronics Store\obj\Debug\Electronics_Store.View.ProfileForm.resources

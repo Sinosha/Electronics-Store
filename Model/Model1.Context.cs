@@ -13,10 +13,10 @@ namespace Electronics_Store.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ElectronicsStoreContext : DbContext
+    public partial class ElectronicsStore : DbContext
     {
-        public ElectronicsStoreContext()
-            : base("name=ElectronicsStoreContext")
+        public ElectronicsStore()
+            : base("name=ElectronicsStore")
         {
         }
     
@@ -31,5 +31,6 @@ namespace Electronics_Store.Model
         public virtual DbSet<Model_Specification> Model_Specification { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<User_Personal_Data> User_Personal_Data { get; set; }
+        public virtual DbSet<Sale_Info> Sale_Info { get; set; }
     }
 }

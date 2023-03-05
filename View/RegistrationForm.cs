@@ -14,13 +14,13 @@ namespace Electronics_Store.View
 {
     public partial class RegistrationForm : Form
     {
-        ElectronicsStoreContext _context;
+        ElectronicsStore _context;
         Encrypt encrypt = new Encrypt();
         Auth auth = new Auth();
         public RegistrationForm()
         {
             InitializeComponent();
-            _context = new ElectronicsStoreContext();
+            _context = new ElectronicsStore();
             label8.Visible = false;
             label9.Visible = false;
         }

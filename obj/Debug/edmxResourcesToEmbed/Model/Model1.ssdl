@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Хранилище ElectronicsStore" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Хранилище Electronics_storeModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Category">
     <Key>
       <PropertyRef Name="ID" />
@@ -22,19 +22,29 @@
     <Property Name="Category_name_FK" Type="int" />
     <Property Name="Manufacturer_name_FK" Type="int" />
     <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model_specification_FK" Type="int" />
   </EntityType>
   <EntityType Name="Model_Specification">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Model_FK" Type="int" />
     <Property Name="Model_name" Type="nvarchar" MaxLength="50" />
     <Property Name="Specification" Type="nvarchar" MaxLength="250" />
     <Property Name="Date_of_manufacture" Type="date" />
     <Property Name="Available_in_stock" Type="int" />
     <Property Name="Weight" Type="float" />
     <Property Name="Price" Type="money" />
+    <Property Name="AmountOfDefective" Type="int" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sale_Info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SaleDate" Type="date" />
+    <Property Name="Model_Spec_FK" Type="int" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -82,15 +92,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Model_Spe__Model__3E52440B">
-    <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
-    <End Role="Model_Specification" Type="Self.Model_Specification" Multiplicity="*" />
+  <Association Name="FK__Model__Model_spe__4AB81AF0">
+    <End Role="Model_Specification" Type="Self.Model_Specification" Multiplicity="0..1" />
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Model">
+      <Principal Role="Model_Specification">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="Model_Specification">
-        <PropertyRef Name="Model_FK" />
+      <Dependent Role="Model">
+        <PropertyRef Name="Model_specification_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sale_Info__Model__5CD6CB2B">
+    <End Role="Model_Specification" Type="Self.Model_Specification" Multiplicity="0..1" />
+    <End Role="Sale_Info" Type="Self.Sale_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model_Specification">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sale_Info">
+        <PropertyRef Name="Model_Spec_FK" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -106,11 +128,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Хранилище ElectronicsStoreContainer">
+  <EntityContainer Name="Хранилище Electronics_storeModelContainer">
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Model" EntityType="Self.Model" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Model_Specification" EntityType="Self.Model_Specification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sale_Info" EntityType="Self.Sale_Info" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User_Personal_Data" EntityType="Self.User_Personal_Data" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Model__Category___3A81B327" Association="Self.FK__Model__Category___3A81B327">
@@ -121,9 +144,13 @@
       <End Role="Manufacturer" EntitySet="Manufacturer" />
       <End Role="Model" EntitySet="Model" />
     </AssociationSet>
-    <AssociationSet Name="FK__Model_Spe__Model__3E52440B" Association="Self.FK__Model_Spe__Model__3E52440B">
-      <End Role="Model" EntitySet="Model" />
+    <AssociationSet Name="FK__Model__Model_spe__4AB81AF0" Association="Self.FK__Model__Model_spe__4AB81AF0">
       <End Role="Model_Specification" EntitySet="Model_Specification" />
+      <End Role="Model" EntitySet="Model" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sale_Info__Model__5CD6CB2B" Association="Self.FK__Sale_Info__Model__5CD6CB2B">
+      <End Role="Model_Specification" EntitySet="Model_Specification" />
+      <End Role="Sale_Info" EntitySet="Sale_Info" />
     </AssociationSet>
     <AssociationSet Name="FK__User_Pers__User___4316F928" Association="Self.FK__User_Pers__User___4316F928">
       <End Role="User" EntitySet="User" />

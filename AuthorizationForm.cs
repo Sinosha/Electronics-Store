@@ -1,5 +1,4 @@
-﻿using Electronics_Store.Classes;
-using Electronics_Store.Model;
+﻿using Electronics_Store.Model;
 using Electronics_Store.Services;
 using Electronics_Store.View;
 using System;
@@ -17,13 +16,13 @@ namespace Electronics_Store
 {
     public partial class AuthorizationForm : Form
     {
-        ElectronicsStoreContext _context;
+        ElectronicsStore _context;
         Auth Auth = new Auth();
         User_Personal_Data _data = new User_Personal_Data();
         public AuthorizationForm()
         {
             InitializeComponent();
-            _context = new ElectronicsStoreContext();
+            _context = new ElectronicsStore();
             
             
         }
